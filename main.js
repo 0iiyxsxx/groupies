@@ -22,7 +22,7 @@ const STATE = {
 
 const DIALOGUES = {
     sarah: "hiiii ana sara o safi sero thowaw rawr",
-    power: "wa khoti ra makin gha l7wi",
+    power: "wa khoti ash had l7wi",
     hakim: "3afak a mehdzi khlini nzid gha dghma",
     mehdzi: "wa baraka azobey ra ghadi n3yt lik 3la wadie",
     dxio: "t7wina bkri",
