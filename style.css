@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Fredoka One', 'Nunito', 'Segoe UI', sans-serif;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #bae4fc;
+}
+
+#webgl-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Cinematic Flash Transition Overlay */
+#portal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #fffdf9;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+}
+
+/* Minimalist Context Top Hint */
+#interaction-hint {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2e221f;
+    color: #fff4db;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    pointer-events: none;
+    z-index: 20;
+    border: 3px solid #ffbe76;
+}
+
+/* Modernized Global Interactive Buttons */
+#btn-outside {
+    position: absolute;
+    bottom: 30px; left: 50%;
+    transform: translateX(-50%);
+    padding: 16px 40px;
+    background: #ff6f59;
+    color: white; font-weight: bold; font-size: 1.15rem;
+    border: 4px solid #2e221f; border-radius: 24px;
+    box-shadow: 0 8px 0 #bc4331; 
+    cursor: pointer;
+    z-index: 20; 
+    transition: transform 0.1s, background 0.2s;
+}
+#btn-outside:hover { background: #ff8573; }
+#btn-outside:active { transform: translate(-50%, 6px); box-shadow: 0 2px 0 #bc4331; }
+
+/* Comic Book Dialogue Engine Bubbles */
+#dialogue-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+.speech-bubble {
+    position: absolute;
+    background: #ffffff;
+    border: 4px solid #2e221f;
+    padding: 16px 24px;
+    border-radius: 24px;
+    font-weight: 800;
+    color: #2e221f;
+    font-size: 1.05rem;
+    max-width: 260px;
+    text-align: center;
+    box-shadow: 0 8px 0px rgba(46, 34, 31, 0.12);
+    transform: translate(-50%, -115%);
+    pointer-events: auto;
+}
+.speech-bubble::after {
+    content: ''; position: absolute; bottom: -16px; left: 50%;
+    transform: translateX(-50%); border-width: 16px 16px 0;
+    border-style: solid; border-color: white transparent; display: block; width: 0;
+}
+.speech-bubble::before {
+    content: ''; position: absolute; bottom: -22px; left: 50%;
+    transform: translateX(-50%); border-width: 18px 18px 0;
+    border-style: solid; border-color: #2e221f transparent; display: block; width: 0; z-index: -1;
+}
+
+/* Weighted Rounded Audio Station Deck UI */
+#radio-panel {
+    position: absolute;
+    bottom: 30px; right: 30px;
+    width: 330px;
+    background: #fffcf7;
+    border: 4px solid #2e221f;
+    border-radius: 32px;
+    box-shadow: 0 12px 0px #dcd0be, 0 16px 35px rgba(0,0,0,0.08);
+    z-index: 35; overflow: hidden;
+}
+.radio-header {
+    background: #fbc687; padding: 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 4px solid #2e221f;
+}
+.radio-header h3 { color: #2e221f; font-size: 1.25rem; font-weight: 900; }
+#close-radio { background: none; border: none; font-size: 2rem; cursor: pointer; color: #2e221f; font-weight: bold; line-height: 1; }
+
+.radio-body { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+.station-info {
+    background: #f0e2cf; padding: 12px 16px; border-radius: 16px;
+    display: flex; flex-direction: column; font-size: 0.9rem; font-weight: 700; color: #523f38; gap: 4px;
+}
+.radio-controls { display: flex; justify-content: center; align-items: center; gap: 18px; }
+.btn-ctrl {
+    background: #4ecdc4; border: 3px solid #2e221f; border-radius: 18px;
+    padding: 12px 36px; font-weight: bold; color: white; cursor: pointer; box-shadow: 0 5px 0 #2fa8a0;
+    font-size: 1rem;
+}
+.btn-ctrl:active { transform: translateY(3px); box-shadow: 0 2px 0 #2fa8a0; }
+.btn-icon {
+    background: white; border: 3px solid #2e221f; border-radius: 16px;
+    width: 48px; height: 48px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+.volume-container { display: flex; align-items: center; gap: 12px; font-size: 1.2rem; margin-top: 4px; }
+.volume-container input { flex: 1; accent-color: #4ecdc4; cursor: pointer; height: 8px; }
+
+.station-list { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+.station-btn {
+    background: white; border: 3px solid #f0e2cf; border-radius: 14px;
+    padding: 12px; text-align: left; font-size: 0.9rem; font-weight: 700; cursor: pointer; color: #523f38;
+}
+.station-btn.active { background: #ffbe76; border-color: #2e221f; }
+
+.hidden { display: none !important; opacity: 0; pointer-events: none; }

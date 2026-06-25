@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROUPIES — Interactive Cartoon House</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <div id="portal-overlay"></div>
+
+    <div id="interaction-hint">marhba biik</div>
+
+    <button id="btn-outside" class="hidden">qwd</button>
+
+    <div id="dialogue-container"></div>
+
+    <div id="radio-panel" class="hidden">
+        <div class="radio-header">
+            <h3>GROUPIES FM</h3>
+            <button id="close-radio">×</button>
+        </div>
+        <div class="radio-body">
+            <div class="station-info">
+                <span id="curren-station">ida3a:Groupies FM </span>
+                <span id="track-satus">track khdam</span>
+            </div>
+            
+            <div class="radio-controls">
+                <button id="rad-prev" class="btn-icon">⏮</button>
+                <button id="rad-play" class="btn-ctrl">PAUSE</button>
+                <button id="rad-next" class="btn-icon">⏭</button>
+            </div>
+
+            <div class="volume-container">
+                <span></span>
+                <input type="range" id="volume-slider" min="0" max="100" value="80">
+            </div>
+
+            <div class="station-list">
+                <button class="station-btn active" data-station="0">Groupies FM</button>
+                <button class="station-btn" data-station="1">mzika ajmi </button>
+                <button class="station-btn" data-station="2">mzika dl makla </button>
+                <button class="station-btn" data-station="3">chilling o sf hh </button>
+                <button class="station-btn" data-station="4">chwya dyal fetah</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
